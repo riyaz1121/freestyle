@@ -10,13 +10,26 @@
 
   <name>shaik-task1</name>
   <!-- FIXME change it to the project's website -->
-  <url>http://www.example.com</url>
+  <url>http://maven.apache.orgm</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.7</maven.compiler.source>
     <maven.compiler.target>1.7</maven.compiler.target>
   </properties>
+  
+  <distributionManagement>
+         <repository>
+                 <id>sre-release</id>
+                 <url>http://18.234.148.63:8081/repository/sre-release/</url>
+                 <layout>default</layout>
+             <releases>
+                 <enabled>true</enabled>
+                 <updatePolicy>always</updatePolicy>
+                 <checksumPolicy>warn</checksumPolicy>
+             </releases>
+          </repository>
+  </distributionManagement>
 
   <dependencies>
     <dependency>
@@ -68,8 +81,12 @@
         <plugin>
           <artifactId>maven-project-info-reports-plugin</artifactId>
           <version>3.0.0</version>
+                  <configuration>
+                        <failOnMissingWebXml>false</failOnMissingWebXml>
+                  </configuration>
         </plugin>
       </plugins>
     </pluginManagement>
+               <finalName>shaik-task1</finalName>
   </build>
 </project>
